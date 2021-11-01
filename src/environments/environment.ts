@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  brainshopApi: 'http://api.brainshop.ai/get?bid=160872&key=GQH3FaiRQwcVWi1r&'
+  brainshopApi: 'https://api.brainshop.ai/get?bid=160872&key=GQH3FaiRQwcVWi1r&'
 };
 
 /*

@@ -20,12 +20,12 @@ export class MessageEffects {
     ofType<AddNewMessage>(MessageActionType.AddNewMessage),
     withLatestFrom(this.store.pipe(select(getAllMessages))),
     switchMap(([action, messages]) => {
-      const message = action.payload.message;
+      const message = encodeURIComponent(action.payload.message);
       const id = action.payload.id;
       if(messages && messages.length > 0) {
         this.store.dispatch(new AddMessageSuccess({message , id, type: MessageType.message}))
       }
-      return this.messageService.sendMessage(id, action.payload.message).pipe(
+      return this.messageService.sendMessage(id, message).pipe(
         map(res => {
           if(res) {
             this.store.dispatch(new AddMessageSuccess({message: res?.cnt , id, type: MessageType.response}))
