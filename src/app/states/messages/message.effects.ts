@@ -31,9 +31,10 @@ export class MessageEffects {
             this.store.dispatch(new AddMessageSuccess({message: res?.cnt , id, type: MessageType.response}))
           }
           return EMPTY;
-        }, catchError(err => {
+        }), catchError(err => {
+          this.store.dispatch(new AddMessageSuccess({message: 'Connection error please try again' , id, type: MessageType.response, data: {status: false}}))
           return EMPTY;
-        }))
+        })
       )
     })
   )

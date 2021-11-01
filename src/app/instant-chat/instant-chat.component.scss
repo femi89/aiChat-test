@@ -38,6 +38,12 @@
           color: #fff;
         }
       }
+      &.error{
+        span{
+          background-color: #d26619;
+          color: #fff;
+        }
+      }
     }
     .empty-holder{
       text-align: center;

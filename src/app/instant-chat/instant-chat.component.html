@@ -4,7 +4,7 @@
   </div>
   <div class="chat-message-container">
     <div *ngIf="chatMessages && chatMessages.length > 0; else noChat">
-      <div class="message {{chatMessage.type===messageType.response? chatMessage.type : ''}} animated fadeIn" *ngFor="let chatMessage of chatMessages">
+      <div class="message {{chatMessage.type===messageType.response? chatMessage.type : ''}} {{chatMessage?.data?.status === false? 'error' : ''}} animated fadeIn" *ngFor="let chatMessage of chatMessages">
         <span>{{chatMessage.message}}</span>
       </div>
     </div>
