@@ -22,12 +22,14 @@ export class InstantChatComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.uuid = UUID.UUID();
     this.store.pipe(select(getAllMessages)).subscribe(res => {
-      if (res) {
+      if (res && res.length >0) {
         this.chatMessages = res;
+      } else {
+        this.store.dispatch(new AddNewMessage({id: this.uuid, message: 'what is your name?'}))
       }
     })
-    this.uuid = UUID.UUID();
     this.chatFormGroup = this.formBuilder.group({
       message: ['', Validators.required]
     })

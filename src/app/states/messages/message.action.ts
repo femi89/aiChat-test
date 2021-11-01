@@ -8,6 +8,9 @@ export enum MessageActionType {
   initiateChat = '[message action] clear all message in the list',
 }
 
+export class InitiateChat implements Action{
+  public readonly type = MessageActionType.initiateChat;
+}
 export class clearAllMessage implements Action{
   public readonly type = MessageActionType.clearAllMessage;
 }
@@ -21,6 +24,7 @@ export class AddMessageSuccess implements Action{
 }
 
 export type MessageActions =
+  | InitiateChat
   | clearAllMessage
   | AddNewMessage
   | AddMessageSuccess;
