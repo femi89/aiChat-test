@@ -1,0 +1,6 @@
+<div class="chat-wrapper">
+  <div *ngIf="showChat" class="animated {{chatClass}}">
+    <app-instant-chat></app-instant-chat>
+  </div>
+  <button class="chat-button" (click)="toggleChatDisplay()">{{actionButtonLabel}}</button>
+</div>

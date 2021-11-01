@@ -1,0 +1,20 @@
+.chat-wrapper{
+  position: fixed;
+  right: 4px;
+  bottom: 12px;
+  .chat-button{
+    height: 45px;
+    width: 85px;
+    border-radius: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1976d2;
+    color: #fff;
+    transition: all .500s ease-in-out;
+    &:hover{
+      background-color: #094581;
+      cursor: pointer;
+    }
+  }
+}

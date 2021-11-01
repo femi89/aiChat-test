@@ -1,0 +1,25 @@
+<div class="chat-message-box">
+  <div class="chat-message-header">
+  <span>Welcome (Online)</span>
+  </div>
+  <div class="chat-message-container">
+    <div *ngIf="chatMessages && chatMessages.length > 0; else noChat">
+      <div class="message {{chatMessage.type===messageType.response? chatMessage.type : ''}} animated fadeIn" *ngFor="let chatMessage of chatMessages">
+        <span>{{chatMessage.message}}</span>
+      </div>
+    </div>
+    <ng-template #noChat>
+      <div class="text-center empty-holder alert alert-warning">
+        <p>Please talk to us, dont know what to say?</p>
+        <p class="small">(Start by typing hello)</p>
+      </div>
+    </ng-template>
+  </div>
+  <form [formGroup]="chatFormGroup" (ngSubmit)="sendMessage()">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Type a message" formControlName="message" [autofocus]="true"/>
+      <button class="btn btn-primary" type="submit"><i class="fa fa-send-o"></i>
+      </button>
+    </div>
+  </form>
+</div>

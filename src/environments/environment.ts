@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  brainshopApi: 'http://api.brainshop.ai/get?bid=160872&key=GQH3FaiRQwcVWi1r&'
 };
 
 /*
